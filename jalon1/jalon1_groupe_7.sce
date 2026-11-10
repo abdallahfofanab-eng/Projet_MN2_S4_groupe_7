@@ -178,23 +178,3 @@ for c = 1:2
     mprintf("Cas %s : trapezes -> %s ; Simpson -> %s\n", cas_nom(c), sT, sS);
 end
 
-// ---------------------------------------------------------------------
-// 7. Figure : flux Phi(t) et convergence (echelles log-log)
-// ---------------------------------------------------------------------
-scf(1); clf();
-subplot(1, 2, 1);
-tp = linspace(t0, t1, 200);
-plot(tp, phi(tp, cas_p(1)), "r-", tp, phi(tp, cas_p(2)), "b-");
-xlabel("t [h]"); ylabel("Phi [W/m2]");
-title("Flux a travers la paroi");
-legend(["A : sans isolant", "B : avec isolant"], "in_upper_left");
-xgrid();
-
-subplot(1, 2, 2);
-loglog(N, max(errT_all(1,:), %eps), "ro-",  N, max(errS_all(1,:), %eps), "bs-", ..
-       N, max(errT_all(2,:), %eps), "r^--", N, max(errS_all(2,:), %eps), "bd--");
-title("Convergence (cas A et B)");
-legend(["Trapezes (A)", "Simpson (A)", "Trapezes (B)", "Simpson (B)"], "in_lower_left");
-xgrid();
-xs2png(0, "figure_jalon1.png");
-mprintf("\nFigure enregistree : figure_jalon1.png\n");
