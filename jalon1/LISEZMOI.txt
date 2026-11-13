@@ -1,4 +1,0 @@
-Ce dossier comprend 3 fichiers dont : 
-le compte rendu du Jalon 1 ;
-le fichier Scilab avec pour sorti les tableaux de convergences ;
-un fichiers Scilab avec pour sorti les courbes de convergences ;
